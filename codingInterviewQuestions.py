@@ -306,5 +306,5 @@ s2 = "296678"			#result = 1
 s3 = "044"				#result = 1
 s4 = ""					#result = 0
 s5 = "297529234729384"	#result = 2
-print (numWays(s5))s
+print (numWays(s5))
 '''
