@@ -1,4 +1,4 @@
-#------CODING INTERVIEW QUESTIONS IN PYTHON------#
+#CODING INTERVIEW QUESTIONS IN PYTHON------------#
 #My methods may not be the best or most efficient#
 #------------------------------------------------#
 
@@ -11,7 +11,7 @@ def findMissingFromArray(array):
 	y=1 #Difference Check. This is how we determine if we have multiple missing values
 	for x in range(len(array)):
 		if (x+y) != array[x]:
-			print "Missing number is %d" % (array[x]-1)
+			print ("Missing number is %d" % (array[x]-1))
 			y+=1 #Because we found a missing number, the difference check will have to be incremented
 
 '''
@@ -28,7 +28,7 @@ def findDupInArray(array):
 		if array[x] not in tempArray:
 			tempArray.append(array[x])
 		else:
-			print "Duplicate found: %d @ index #%d" % (array[x], x)
+			print ("Duplicate found: %d @ index #%d" % (array[x], x))
 
 '''
 MAIN FUNCTION
@@ -48,7 +48,7 @@ def findMinMaxArray(array):
 		if array[x] > max:
 			max = array[x]
 
-	print "Largest value: %d\nSmallest value: %d" % (max, min)
+	print ("Largest value: %d\nSmallest value: %d" % (max, min))
 
 '''
 MAIN FUNCTION
@@ -64,11 +64,11 @@ def findPairsSumToX(array, target):
 		for z in range(y, len(array)):
 			if array[y] + array[z] == target:
 				pairList.append([array[y], array[z]])
-				print "Pair found: %d & %d" % (array[y], array[z])
+				print ("Pair found: %d & %d" % (array[y], array[z]))
 			z += 1
 		y+=1
 
-	print pairList
+	print (pairList)
 
 '''
 MAIN FUNCTION
@@ -102,21 +102,21 @@ MAIN FUNCTION
 -------------
 ourArray = [9,6,14,91,35,31,67,16,61]
 n = len(ourArray) - 1
-print "Array initially:\n%ls"%(ourArray)
+print ("Array initially:\n%ls"%(ourArray))
 quickSortArray(ourArray, 0, n)
-print "Array quick sorted:\n%ls"%(ourArray)
+print ("Array quick sorted:\n%ls"%(ourArray))
 '''
 
 #6. HOW DO YOU REVERSE AN ARRAY?#
 def reverseArray(array):
 	i = 0 #iterator, starting with index 0
 	j = len(array)-1 #this is the index of the last element. We will decrement it
-	print "Array initially:\n%ls"%(array) 
+	print ("Array initially:\n%ls"%(array) )
 	while i < j:
 		array[i], array[j] = array[j],array[i] #swap these fools
 		i += 1 #move right
 		j -= 1 #move end index down
-	print "Array reversed:\n%ls"%(array)
+	print ("Array reversed:\n%ls"%(array))
 
 '''
 MAIN FUNCTION
@@ -135,7 +135,7 @@ def removeDupsArray(array):
 	for x in range(len(array)):
 		if array[x] in tempArray:
 			duplicateList.append(array[x])
-			print "Duplicate found: %d @ index #%d" % (array[x], x)
+			print ("Duplicate found: %d @ index #%d" % (array[x], x))
 		if array[x] not in tempArray:
 			tempArray.append(array[x])
 
@@ -143,8 +143,8 @@ def removeDupsArray(array):
 		if y in array:
 			array.remove(y)
 
-	print "Duplicate List: %ls" % (duplicateList)
-	print "Array with duplicates deleted: %ls" % (array)
+	print ("Duplicate List: %ls" % (duplicateList))
+	print ("Array with duplicates deleted: %ls" % (array))
 	
 '''
 MAIN FUNCTION
@@ -172,7 +172,7 @@ def printDupsFromString(theString):
 		if stringDict[x] > 1:
 			duplicateDict[x] = stringDict[x] - 1
 
-	print "Extra characters %ls" % (duplicateDict)
+	print ("Extra characters %ls" % (duplicateDict))
 
 '''
 MAIN FUNCTION
@@ -186,13 +186,13 @@ printDupsFromString(theString)
 #Watch out for things like instructions to ignore case/numbers/symbols
 #Use string1 = string1.lower() and make a dict and use it for translation if you need to 
 #get rid of special symbols. Iterating through the string and replacing characters is too slow
-def checkPal(strOne,strTwo):
+def checkPal(one,two):
 	palBool = True
 
-	d = len(strTwo)-1 #index of last char in string #2
-	if len(strOne) == len(strTwo):
-		for c in xrange(len(strOne)-1):
-			if strOne[c] == strTwo[d]:
+	d = len(two)-1 #index of last char in string #2
+	if len(one) == len(two):
+		for c in xrange(len(one)-1):
+			if one[c] == two[d]:
 				d -= 1
 			else:
 				palBool = False
@@ -207,9 +207,9 @@ MAIN FUNCTION
 string1 = "23hf9hd9h"
 string2 = "29hf29n2h"
 string3 = "h9dh9fh32"
-print "String 1: %s / String 2: %s / Palindrome Check: %s" % (string1, string2, checkPal(string1, string2))
-print "String 1: %s / String 3: %s / Palindrome Check: %s" % (string1, string3, checkPal(string1, string3))
-print "String 2: %s / String 3: %s / Palindrome Check: %s" % (string2, string3, checkPal(string2, string3))
+print ("String 1: %s / String 2: %s / Palindrome Check: %s" % (string1, string2, checkPal(string1, string2)))
+print ("String 1: %s / String 3: %s / Palindrome Check: %s" % (string1, string3, checkPal(string1, string3)))
+print ("String 2: %s / String 3: %s / Palindrome Check: %s" % (string2, string3, checkPal(string2, string3)))
 '''
 
 #3. HOW DO YOU CHECK THE FIRST NON-REPEATED CHARACTER OF A STRING?
@@ -221,7 +221,7 @@ def firstOriginalCharString(theString):
 
 	for char in theString:
 		if char != prevChar:
-			print "First non-repeated char is: " + char + "\n"
+			print ("First non-repeated char is: " + char + "\n")
 			break
 
 
@@ -263,20 +263,18 @@ class r:
 		self.upperX = ux
 		self.upperY = uy
 	def printCoordinates(self):
-		print "Coordinates are (" + str(self.lowerX) + "," + str(self.lowerY) + ")(" + str(self.upperX) + "," + str(self.upperY) + ")\n"
+		(print "Coordinates are (" + str(self.lowerX) + "," + str(self.lowerY) + ")(" + str(self.upperX) + "," + str(self.upperY) + ")\n")
 
 rect1 = r(2,1,5,5)
 rect2 = r(3,2,5,7) 
 rect3 = r(3,0,4,1)
 rect4 = r(-3,4,4,4)
 
-print areaOfOverlap(rect3, rect4)#Test case 1 is rect1, rect2 = 6 ||| Test case 2 is rect3, rect4 = False
+print (areaOfOverlap(rect3, rect4)#Test case 1 is rect1, rect2 = 6 ||| Test case 2 is rect3, rect4 = False)
 
 '''
 
 #2. HOW MANY WAYS ARE THERE TO DECODE THIS MESSAGE?
-#Each string is a sequence of numbers corresponding to letters of the alphabet. A '1' is 'A', while '11'
-#could be decoded as 'AA' or 'K', thus having 2 ways of decoding.
 #Recursion is needed here. Without memoization, this problem is O(n^k), with it, it becomes O(n)
 
 def recursionHelper(theString, k, memo):
@@ -308,5 +306,5 @@ s2 = "296678"			#result = 1
 s3 = "044"				#result = 1
 s4 = ""					#result = 0
 s5 = "297529234729384"	#result = 2
-print numWays(s5)
+print (numWays(s5))s
 '''
